@@ -43,4 +43,10 @@ public class AccountController {
         var updatedAccount = accountService.updateAccount(id, accountToModify);
         return ResponseEntity.ok(updatedAccount);
     }
+
+    @PostMapping("/delete/{id}")
+    public ResponseEntity<String> deleteAccount(@PathVariable Integer id) {
+        accountService.deleteAccount(id);
+        return ResponseEntity.ok("Conta deletada com sucesso.");
+    }
 }

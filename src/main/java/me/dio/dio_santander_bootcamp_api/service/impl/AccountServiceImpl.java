@@ -39,4 +39,10 @@ public class AccountServiceImpl implements AccountService {
 
         return accountRepository.save(existingAccount);
     }
+
+    @Override 
+    public void deleteAccount(Integer id) {
+        Account accountToDelete = accountRepository.findById(id).orElseThrow(NoSuchElementException::new);
+        accountRepository.delete(accountToDelete);
+    }
 }

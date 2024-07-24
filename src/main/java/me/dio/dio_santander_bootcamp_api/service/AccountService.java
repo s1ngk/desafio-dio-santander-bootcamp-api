@@ -9,4 +9,6 @@ public interface AccountService {
     Account create(Account accountToCreate);
 
     Account updateAccount(Integer id, Account accountToModify);
+
+    void deleteAccount(Integer id);
 }
